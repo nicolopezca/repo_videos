@@ -15,9 +15,8 @@
  * 40-60: Middle aged
  * 61+: Elderly
 */
-let lifeStage : String
-
-switch ("Nombre", 36) {
+let lifeStage: String
+switch ("Name", 36) {
 case (let name, 0...2):
     lifeStage = "\(name) is an Infant"
 case (let name, 3...12):
@@ -32,11 +31,7 @@ case (let name, 61...):
     lifeStage = "\(name) is an Elderly"
 default:
     lifeStage = "No hay rango"
-    
 }
-
-
-
 /*:
  ## Challenge 2
  Imagine starting a new level in a video game. The character makes a series of movements in the game. Calculate the position of the character on a top-down level map after making a set of movements.
@@ -46,16 +41,15 @@ default:
  
  Example: A series of movements like [.north, .west, .west] would return a location of (-2, 1)
 */
-
 enum Direction {
     case north
     case south
     case east
     case west
 }
-func location (for movimientos: [Direction]) -> (x: Int, y: Int){
-    movimientos.reduce(into: (x: 0, y: 0)) { (location, movimiento) in
-        switch movimiento {
+func location (for movements: [Direction]) -> (x: Int, y: Int){
+    movements.reduce(into: (x: 0, y: 0)) { (location, movement) in
+        switch movement {
         case .north:
             location.x += 1
         case .south:
@@ -70,7 +64,4 @@ func location (for movimientos: [Direction]) -> (x: Int, y: Int){
     //return (location.x, location.y) Tampoco me devuelve nada
 }
 location(for: [.east,.east,.south])
-
-
-
 //: [⇒ Next: 07 - Associated Values](@next)
